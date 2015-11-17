@@ -1,6 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-plt.style.use('bmh')
 
 def newtonpoly(x,y, xrange):
 	assert len(x) == len(y), "x and y must have the same dimensions"
@@ -20,13 +18,3 @@ def newtonpoly(x,y, xrange):
 		tx *= ddt[0,i]
 		yint += tx
 	return yint
-	
-	
-x = np.linspace(0.01, 3, 5)
-x2 = np.linspace(0.01, 3)
-y = np.log(x)
-yint = newtonpoly(x, y, x2)
-fig, ax = plt.subplots()
-ax.plot(x, y, 'o')
-ax.plot(x2, yint, '-')
-plt.show()
